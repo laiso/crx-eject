@@ -5,7 +5,7 @@
 
 set -e
 
-if [ $(uname -s) == 'Darwin' ]; then
+if [ "$(uname -s)" = 'Darwin' ]; then
   TARGET_DIR='/Library/Google/Chrome/NativeMessagingHosts'
 else
   TARGET_DIR='/etc/opt/chrome/native-messaging-hosts'
