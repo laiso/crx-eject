@@ -1,0 +1,20 @@
+{
+  "name": "CRX Eject",
+  "version": "1.0",
+  "manifest_version": 2,
+  "description": "Chrome extension to eject the CD tray in your browser.",
+  "browser_action": {
+    "default_icon": {
+      "19": "images/icon38.png",
+      "38": "images/icon38.png"
+    },
+    "default_title": "CRX Eject",
+    "default_popup": "main.html"
+  },
+  "icons": {
+    "128": "icon-128.png"
+  },
+  "permissions": [
+    "nativeMessaging"
+  ]
+}
