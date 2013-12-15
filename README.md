@@ -1,6 +1,10 @@
 crx-eject
 =========
 
+![Demo](https://raw.github.com/laiso/crx-eject/master/demo.gif)
+
+http://www.youtube.com/watch?v=bgMVSPxoZd4
+
 Chrome extension to eject the CD tray in your browser.
 
 In order for this extention to work you must first install the native messaging
