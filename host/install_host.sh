@@ -6,7 +6,7 @@
 set -e
 
 DIR="$( cd "$( dirname "$0" )" && pwd )"
-if [ $(uname -s) == 'Darwin' ]; then
+if [ "$(uname -s)" = 'Darwin' ]; then
   TARGET_DIR='/Library/Google/Chrome/NativeMessagingHosts'
 else
   TARGET_DIR='/etc/opt/chrome/native-messaging-hosts'
@@ -22,8 +22,8 @@ cp $DIR/$HOST_NAME.json $TARGET_DIR
 
 # Update host path in the manifest.
 HOST_PATH=$DIR/crx-eject.sh
-ESCAPED_HOST_PATH=${HOST_PATH////\\/}
-sed -i -e "s/HOST_PATH/$ESCAPED_HOST_PATH/" $TARGET_DIR/$HOST_NAME.json
+ESCAPED_HOST_PATH="$(printf '%s\n' "$HOST_PATH" | sed 's/#/\\#/g')"
+sed -i -e "s#HOST_PATH#$ESCAPED_HOST_PATH#" $TARGET_DIR/$HOST_NAME.json
 
 # Set permissions for the manifest so that all users can read it.
 chmod o+r $TARGET_DIR/$HOST_NAME.json
